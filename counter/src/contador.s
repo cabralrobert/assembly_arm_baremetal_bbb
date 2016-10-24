@@ -22,7 +22,7 @@ _start:
     ldr r3, =#0x0
 
 .main_loop:
-    /* logical 1 turns on the led, TRM 25.3.4.2.2.2 */
+ /* logical 1 turns on the led, TRM 25.3.4.2.2.2 */
     ldr r0, =GPIO1_SETDATAOUT
     mov r1, r3, LSL #21
     str r1, [r0]
@@ -80,7 +80,7 @@ _start:
     stmfd sp!,{r0-r1,lr}
     ldr r0, =WDT_BASE
     
-    ldr r1, =0xAAAA
+    ldr r1, =0xFFFFFFFF
     str r1, [r0, #0x48]
     bl .poll_wdt_write
 

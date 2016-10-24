@@ -1,0 +1,85 @@
+
+bin/prova.bin:     file format binary
+bin/prova.bin
+architecture: UNKNOWN!, flags 0x00000000:
+
+start address 0x00000000
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000108  00000000  00000000  00000000  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+SYMBOL TABLE:
+no symbols
+
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+   0:	e10f0000 	mrs	r0, CPSR
+   4:	e3c0001f 	bic	r0, r0, #31
+   8:	e3800013 	orr	r0, r0, #19
+   c:	e38000c0 	orr	r0, r0, #192	; 0xc0
+  10:	e129f000 	msr	CPSR_fc, r0
+  14:	ee100f10 	mrc	15, 0, r0, cr0, cr0, {0}
+  18:	e1a05c20 	lsr	r5, r0, #24
+  1c:	e205507f 	and	r5, r5, #127	; 0x7f
+  20:	e3550041 	cmp	r5, #65	; 0x41
+  24:	0b000008 	bleq	0x4c
+  28:	e1a05620 	lsr	r5, r0, #12
+  2c:	e205500f 	and	r5, r5, #15
+  30:	e3550007 	cmp	r5, #7
+  34:	cb00000d 	blgt	0x70
+  38:	e1a05000 	mov	r5, r0
+  3c:	e2055007 	and	r5, r5, #7
+  40:	e3550002 	cmp	r5, #2
+  44:	0b000012 	bleq	0x94
+  48:	eafffffe 	b	0x48
+  4c:	e92d4007 	push	{r0, r1, r2, lr}
+  50:	e28f1080 	add	r1, pc, #128	; 0x80
+  54:	e4d10001 	ldrb	r0, [r1], #1
+  58:	e20000ff 	and	r0, r0, #255	; 0xff
+  5c:	e3500000 	cmp	r0, #0
+  60:	0a000001 	beq	0x6c
+  64:	eb000013 	bl	0xb8
+  68:	eafffff9 	b	0x54
+  6c:	e8bd8007 	pop	{r0, r1, r2, pc}
+  70:	e92d4007 	push	{r0, r1, r2, lr}
+  74:	e28f106f 	add	r1, pc, #111	; 0x6f
+  78:	e4d10001 	ldrb	r0, [r1], #1
+  7c:	e20000ff 	and	r0, r0, #255	; 0xff
+  80:	e3500000 	cmp	r0, #0
+  84:	0a000001 	beq	0x90
+  88:	eb00000a 	bl	0xb8
+  8c:	eafffff9 	b	0x78
+  90:	e8bd8007 	pop	{r0, r1, r2, pc}
+  94:	e92d4007 	push	{r0, r1, r2, lr}
+  98:	e28f1057 	add	r1, pc, #87	; 0x57
+  9c:	e4d10001 	ldrb	r0, [r1], #1
+  a0:	e20000ff 	and	r0, r0, #255	; 0xff
+  a4:	e3500000 	cmp	r0, #0
+  a8:	0a000001 	beq	0xb4
+  ac:	eb000001 	bl	0xb8
+  b0:	eafffff9 	b	0x9c
+  b4:	e8bd8007 	pop	{r0, r1, r2, pc}
+  b8:	e92d4007 	push	{r0, r1, r2, lr}
+  bc:	e59f1040 	ldr	r1, [pc, #64]	; 0x104
+  c0:	e5912014 	ldr	r2, [r1, #20]
+  c4:	e2022020 	and	r2, r2, #32
+  c8:	e3520000 	cmp	r2, #0
+  cc:	0afffffb 	beq	0xc0
+  d0:	e5c10000 	strb	r0, [r1]
+  d4:	e8bd8007 	pop	{r0, r1, r2, pc}
+  d8:	6c706d49 	ldclvs	13, cr6, [r0], #-292	; 0xfffffedc
+  dc:	6e656d65 	cdpvs	13, 6, cr6, cr5, cr5, {3}
+  e0:	3a726f74 	bcc	0x1c9beb8
+  e4:	4d524120 	ldfmie	f4, [r2, #-128]	; 0xffffff80
+  e8:	43000d0a 	movwmi	r0, #3338	; 0xd0a
+  ec:	6574726f 	ldrbvs	r7, [r4, #-623]!	; 0xfffffd91
+  f0:	38412078 	stmdacc	r1, {r3, r4, r5, r6, sp}^
+  f4:	52000d0a 	andpl	r0, r0, #640	; 0x280
+  f8:	73697665 	cmnvc	r9, #105906176	; 0x6500000
+  fc:	206e6f69 	rsbcs	r6, lr, r9, ror #30
+ 100:	000d0a32 	andeq	r0, sp, r2, lsr sl
+ 104:	44e09000 	strbtmi	r9, [r0], #0

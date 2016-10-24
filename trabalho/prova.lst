@@ -1,0 +1,130 @@
+
+bin/prova.bin:     file format binary
+bin/prova.bin
+architecture: UNKNOWN!, flags 0x00000000:
+
+start address 0x00000000
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000001bc  00000000  00000000  00000000  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+SYMBOL TABLE:
+no symbols
+
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+   0:	e10f0000 	mrs	r0, CPSR
+   4:	e3c0001f 	bic	r0, r0, #31
+   8:	e3800013 	orr	r0, r0, #19
+   c:	e38000c0 	orr	r0, r0, #192	; 0xc0
+  10:	e129f000 	msr	CPSR_fc, r0
+  14:	eb000024 	bl	0xac
+  18:	eb000032 	bl	0xe8
+  1c:	ee100f10 	mrc	15, 0, r0, cr0, cr0, {0}
+  20:	e1a05c20 	lsr	r5, r0, #24
+  24:	e205507f 	and	r5, r5, #127	; 0x7f
+  28:	e3550041 	cmp	r5, #65	; 0x41
+  2c:	0b000030 	bleq	0xf4
+  30:	e1a05620 	lsr	r5, r0, #12
+  34:	e205500f 	and	r5, r5, #15
+  38:	e3550007 	cmp	r5, #7
+  3c:	cb00002f 	blgt	0x100
+  40:	e3a00000 	mov	r0, #0
+  44:	ee400f10 	mcr	15, 2, r0, cr0, cr0, {0}
+  48:	ee300f10 	mrc	15, 1, r0, cr0, cr0, {0}
+  4c:	e59f114c 	ldr	r1, [pc, #332]	; 0x1a0
+  50:	e1500001 	cmp	r0, r1
+  54:	0b00002c 	bleq	0x10c
+  58:	e3a00001 	mov	r0, #1
+  5c:	ee400f10 	mcr	15, 2, r0, cr0, cr0, {0}
+  60:	ee300f10 	mrc	15, 1, r0, cr0, cr0, {0}
+  64:	e59f1138 	ldr	r1, [pc, #312]	; 0x1a4
+  68:	e1500001 	cmp	r0, r1
+  6c:	0b000029 	bleq	0x118
+  70:	e3a00002 	mov	r0, #2
+  74:	ee400f10 	mcr	15, 2, r0, cr0, cr0, {0}
+  78:	ee300f10 	mrc	15, 1, r0, cr0, cr0, {0}
+  7c:	e59f1124 	ldr	r1, [pc, #292]	; 0x1a8
+  80:	e1500001 	cmp	r0, r1
+  84:	0b000026 	bleq	0x124
+  88:	ea000015 	b	0xe4
+  8c:	e92d4007 	push	{r0, r1, r2, lr}
+  90:	e59f1114 	ldr	r1, [pc, #276]	; 0x1ac
+  94:	e5912014 	ldr	r2, [r1, #20]
+  98:	e2022020 	and	r2, r2, #32
+  9c:	e3520000 	cmp	r2, #0
+  a0:	0afffffb 	beq	0x94
+  a4:	e5c10000 	strb	r0, [r1]
+  a8:	e8bd8007 	pop	{r0, r1, r2, pc}
+  ac:	e92d4003 	push	{r0, r1, lr}
+  b0:	e59f00f8 	ldr	r0, [pc, #248]	; 0x1b0
+  b4:	e59f10f8 	ldr	r1, [pc, #248]	; 0x1b4
+  b8:	e5801048 	str	r1, [r0, #72]	; 0x48
+  bc:	eb000003 	bl	0xd0
+  c0:	e59f10f0 	ldr	r1, [pc, #240]	; 0x1b8
+  c4:	e5801048 	str	r1, [r0, #72]	; 0x48
+  c8:	eb000000 	bl	0xd0
+  cc:	e8bd8003 	pop	{r0, r1, pc}
+  d0:	e5901034 	ldr	r1, [r0, #52]	; 0x34
+  d4:	e2011010 	and	r1, r1, #16
+  d8:	e3510000 	cmp	r1, #0
+  dc:	1afffffb 	bne	0xd0
+  e0:	e12fff1e 	bx	lr
+  e4:	eafffffe 	b	0xe4
+  e8:	e92d4007 	push	{r0, r1, r2, lr}
+  ec:	e28f1058 	add	r1, pc, #88	; 0x58
+  f0:	ea00000e 	b	0x130
+  f4:	e92d4007 	push	{r0, r1, r2, lr}
+  f8:	e28f105c 	add	r1, pc, #92	; 0x5c
+  fc:	ea00000b 	b	0x130
+ 100:	e92d4007 	push	{r0, r1, r2, lr}
+ 104:	e28f1057 	add	r1, pc, #87	; 0x57
+ 108:	ea000008 	b	0x130
+ 10c:	e92d4007 	push	{r0, r1, r2, lr}
+ 110:	e28f1056 	add	r1, pc, #86	; 0x56
+ 114:	ea000005 	b	0x130
+ 118:	e92d4007 	push	{r0, r1, r2, lr}
+ 11c:	e28f105d 	add	r1, pc, #93	; 0x5d
+ 120:	ea000002 	b	0x130
+ 124:	e92d4007 	push	{r0, r1, r2, lr}
+ 128:	e28f105d 	add	r1, pc, #93	; 0x5d
+ 12c:	eaffffff 	b	0x130
+ 130:	e4d10001 	ldrb	r0, [r1], #1
+ 134:	e20000ff 	and	r0, r0, #255	; 0xff
+ 138:	e3500000 	cmp	r0, #0
+ 13c:	0a000001 	beq	0x148
+ 140:	ebffffd1 	bl	0x8c
+ 144:	eafffff9 	b	0x130
+ 148:	e8bd8007 	pop	{r0, r1, r2, pc}
+ 14c:	20232323 	eorcs	r2, r3, r3, lsr #6
+ 150:	434c4557 	movtmi	r4, #50519	; 0xc557
+ 154:	20454d4f 	subcs	r4, r5, pc, asr #26
+ 158:	00232323 	eoreq	r2, r3, r3, lsr #6
+ 15c:	52410d0a 	subpl	r0, r1, #640	; 0x280
+ 160:	4300204d 	movwmi	r2, #77	; 0x4d
+ 164:	6574726f 	ldrbvs	r7, [r4, #-623]!	; 0xfffffd91
+ 168:	38412d78 	stmdacc	r1, {r3, r4, r5, r6, r8, sl, fp, sp}^
+ 16c:	0d0a0020 	stceq	0, cr0, [sl, #-128]	; 0xffffff80
+ 170:	68636143 	stmdavs	r3!, {r0, r1, r6, r8, sp, lr}^
+ 174:	314c2065 	cmpcc	ip, r5, rrx
+ 178:	203a4420 	eorscs	r4, sl, r0, lsr #8
+ 17c:	424b3233 	submi	r3, fp, #805306371	; 0x30000003
+ 180:	202d2000 	eorcs	r2, sp, r0
+ 184:	33203a49 			; <UNDEFINED> instruction: 0x33203a49
+ 188:	20424b32 	subcs	r4, r2, r2, lsr fp
+ 18c:	430d0a00 	movwmi	r0, #55808	; 0xda00
+ 190:	65686361 	strbvs	r6, [r8, #-865]!	; 0xfffffc9f
+ 194:	3a324c20 	bcc	0xc9321c
+ 198:	36353220 	ldrtcc	r3, [r5], -r0, lsr #4
+ 19c:	0000424b 	andeq	r4, r0, fp, asr #4
+ 1a0:	e00fe01a 	and	lr, pc, sl, lsl r0	; <UNPREDICTABLE>
+ 1a4:	200fe01a 	andcs	lr, pc, sl, lsl r0	; <UNPREDICTABLE>
+ 1a8:	f03fe03a 			; <UNDEFINED> instruction: 0xf03fe03a
+ 1ac:	44e09000 	strbtmi	r9, [r0], #0
+ 1b0:	44e35000 	strbtmi	r5, [r3], #0
+ 1b4:	0000aaaa 	andeq	sl, r0, sl, lsr #21
+ 1b8:	00005555 	andeq	r5, r0, r5, asr r5
